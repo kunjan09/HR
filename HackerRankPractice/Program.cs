@@ -208,15 +208,37 @@ namespace HackerRankPractice
 
 
             #region Array_MaxSum
+            //TextWriter textWriter = new StreamWriter(@System.Environment.CurrentDirectory + "/out.txt", true);
+            //Array_MaxSum obj = new Array_MaxSum();
+            //int[] arr = Array.ConvertAll("3 7 4 6 5".Split(' '), arrTemp => Convert.ToInt32(arrTemp));
+            //var result = obj.maxSubsetSum(arr);
+            //textWriter.WriteLine(result);
+            //textWriter.Flush();
+            //textWriter.Close();
+            //System.Diagnostics.Process.Start(@System.Environment.CurrentDirectory + "/out.txt");
+            #endregion
+
+
+            #region Array_Query
 
             TextWriter textWriter = new StreamWriter(@System.Environment.CurrentDirectory + "/out.txt", true);
-            Array_MaxSum obj = new Array_MaxSum();
-            int[] arr = Array.ConvertAll("3 7 4 6 5".Split(' '), arrTemp => Convert.ToInt32(arrTemp))
-       ;
-            
+            Dict_FrequencyQueries obj = new Dict_FrequencyQueries();
+            string[] lines = File.ReadAllLines(@"C:\Users\Kenzzy\Source\Repos\kunjan09\HR\HackerRankPractice\TestFiles\query.txt");
+            List<List<int>> queries = new List<List<int>>();
+            for (int i = 0; i < lines.Length; i++)
+            {
+                var tmp = new List<int>(Array.ConvertAll(lines[i].Split(' '), arrTemp => Convert.ToInt32(arrTemp)));
+                queries.Add(tmp);
+            }
+            string[] outlines = File.ReadAllLines(@"C:\Users\Kenzzy\Source\Repos\kunjan09\HR\HackerRankPractice\TestFiles\QueryOutput.txt");
+            List<int> result = obj.freqQuery(queries);
+            int q = 0;
+            foreach (int i in result)
+            {
 
-            var result = obj.maxSubsetSum(arr);
-            textWriter.WriteLine(result);
+                textWriter.WriteLine(i+"\t"+outlines[q].ToString());
+                q++;
+            }
             textWriter.Flush();
             textWriter.Close();
             System.Diagnostics.Process.Start(@System.Environment.CurrentDirectory + "/out.txt");
@@ -226,7 +248,7 @@ namespace HackerRankPractice
 
             #endregion
 
-            //sample change
+
 
 
 

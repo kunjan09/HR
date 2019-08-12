@@ -49,6 +49,7 @@
     <Compile Include="BracesPair.cs" />
     <Compile Include="CountingValleys.cs" />
     <Compile Include="CountTriplets.cs" />
+    <Compile Include="Dict_FrequencyQueries.cs" />
     <Compile Include="Dict_RandsomeNote.cs" />
     <Compile Include="Dict_SherlockandAnagrams.cs" />
     <Compile Include="Dict_TwoStrings.cs" />
@@ -68,6 +69,8 @@
     </Content>
     <Content Include="TestFiles\2dArrayHourGlass.txt" />
     <Content Include="TestFiles\BracketsTest1.txt" />
+    <Content Include="TestFiles\query.txt" />
+    <Content Include="TestFiles\QueryOutput.txt" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
